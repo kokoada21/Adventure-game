@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight=" -Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.java.jesa02.adventuraSem.main.HomeController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="35.0" valignment="CENTER" vgrow="NEVER" />
+  </rowConstraints>
+   <children>
+      <HBox maxHeight="200.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+         <children>
+            <Label prefHeight="30.0" text="příkaz">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="vstup" onAction="#zpracujVstup" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="odesli" mnemonicParsing="false" onAction="#zpracujVstup" text="odesli">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
+      <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <items>
+            <TextArea fx:id="vystup" editable="false" prefHeight="200.0" prefWidth="500.0" />
+            <SplitPane dividerPositions="0.5" maxWidth="600.0" minHeight="300.0" minWidth="400.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                  <Pane maxHeight="200.0" minHeight="180.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@batoh.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <VBox fx:id="vypisBatoh" maxWidth="602.0" minHeight="230.0" />
+              </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+      <TitledPane text="baner" GridPane.rowIndex="1">
+         <content>
+            <HBox>
+               <children>
+                  <Label prefHeight="30.0" prefWidth="82.0" text="Východy:">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <ListView fx:id="panelVychodu" onMouseClicked="#vybranVychod" prefHeight="368.0" prefWidth="295.0" />
+                  <Pane prefHeight="368.0" prefWidth="418.0">
+                     <children>
+                        <ImageView fx:id="trikoFanousek" fitHeight="105.0" fitWidth="116.0" layoutX="151.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@triko_fanouska.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="368.0" fitWidth="419.0" layoutX="145.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@panacek.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="trikoOn" fitHeight="99.0" fitWidth="117.0" layoutX="150.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@triko.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="kalhotyOn" fitHeight="114.0" fitWidth="120.0" layoutX="154.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@kalhoty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="botyOn" fitHeight="51.0" fitWidth="143.0" layoutX="151.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@botyOn.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <ImageView fitHeight="349.0" fitWidth="442.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@herniPlan.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hrac" fitHeight="42.0" fitWidth="48.0" layoutX="188.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@hrac.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </content>
+      </TitledPane>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="novaHra" mnemonicParsing="false" onAction="#novaHra" text="Nová hra" />
+            <Button fx:id="napovedaH" mnemonicParsing="false" onAction="#napoveda" text="Nápověda" />
+         </children>
+      </HBox>
+   </children>
+</GridPane>
